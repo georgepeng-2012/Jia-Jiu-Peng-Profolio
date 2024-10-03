@@ -1,0 +1,816 @@
+@charset "utf-8";
+
+
+*{
+	margin:0;
+	padding:0;
+	
+
+	
+}
+
+body{
+	
+	width: 100%;
+	height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	background:rgb(0, 0, 0);
+	overflow-x: hidden;
+}
+/* nav bar */
+nav{
+	position: relative;
+	z-index: 200;
+	text-align:center;
+	font-size:16px;
+	padding-top: 2%;
+
+	
+	
+}
+nav li{
+	
+	display: inline-block;
+	
+}
+
+
+nav li a{
+	
+	color: rgb(230, 230, 230);
+	font-weight: bold;
+	padding:20px 30px;
+	margin-left: 20px;	
+	margin-right: 20px;	
+	text-decoration: none;
+	
+	
+	
+}
+
+nav li a:hover{
+	cursor:pointer;
+	background: rgb(245, 245, 245);
+	border-radius: 35px;
+	color: rgb(30, 30, 30);
+	transition: background 1s ease;
+	
+}
+.nav_line{
+	margin-top: 2%;
+}
+/*cursor外觀*/
+
+.cursor{
+	position: fixed;
+	
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-left: -20px;
+	margin-top: -20px;
+	border:1px solid white; 
+	
+
+	transition: transform .2s ease;
+	transform-origin: center center;
+	transform: all 0.1s ease-out;
+	pointer-events: none;
+
+	z-index: 2000;
+
+}
+/*cursor 放大*/
+.cursor_glow{
+	transform: scale(4);
+	background: #ffffff;
+	mix-blend-mode: difference;
+	border: none;
+}
+.flex_container{
+	/*整個瀏覽器高*/
+	/*
+	height: 400vh;
+	width: 100%;
+	*/
+	height: 100vh;
+	width: 100vw;
+	flex-wrap: nowrap;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	
+}
+.top_main_container{
+	
+	
+	/*margin: auto;*/
+	width: 100%;
+	height: 100vh;
+	flex: 0 0 auto ;
+	/*white-space:nowrap;字不換行*/
+	white-space:nowrap;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+
+	
+	order: 1;
+	
+	
+
+}
+.top_main_container_wrapper{
+
+	position: relative;
+	display: flex;
+	
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
+
+
+.div_top_main_pic{
+	
+	position: relative;
+	display: flex;
+	
+	justify-content: center;
+	align-items: center;
+	
+	width: 50vw;
+	height: 40vw;
+
+	z-index: 0;
+}
+
+.top_main_pic{
+	position: absolute;
+	max-width: 100%;
+
+}
+.top_main_word{
+	position: relative;
+	box-sizing: border-box;
+	margin-left: 30px;
+	width: 25vw;
+
+	z-index: 200;
+
+}
+.welcome{
+	
+	font-weight: 700;
+	font-size: 4em;
+	color: rgb(194, 132, 25);
+	
+
+
+}
+
+.to_my_website{
+	letter-spacing: .2rem;
+	font-weight: 400;
+	font-size: 2.5em;
+	color: rgb(230, 230, 230);
+
+}
+
+
+
+
+
+.name_line{
+	position: relative;
+	width: 280px;
+	height: 80px;
+	
+	z-index: 1;
+}
+.name_title{
+	margin-top: 10%;
+	color: rgb(230, 230, 230);
+	font-weight: 300;
+	font-size: 200%;
+
+}
+
+.name_l{
+	position: relative;
+	bottom: 60px; /*position的對位，好像都反向*/
+	left: 40px;
+	z-index: 200;
+}
+
+.name_r{
+	font-size: 22px;
+	position: relative;
+	bottom: 68px; 
+	left: 210px;
+	z-index: 200;
+}
+
+article{
+	
+	margin-top: 4%;
+	color: rgb(161, 161, 161);
+	line-height: 2em;
+
+}
+
+
+/*about_text_stroke*/
+
+.div_about_text_stroke{
+	position: relative;
+	width: 100%;
+	height: 20vh;
+
+	display: flex;
+	flex: 0 0 auto ;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+
+	order: 2;
+
+	margin-top: 5%;
+	margin-bottom: 5%;
+	
+	
+
+}
+
+.About_text_stroke{
+	position: absolute;
+	font-size: 6em;
+	/*min(max(字大小, 最小值),最大值);*/
+	font-size: min(max(6em, 30px), 160px);
+	/*white-space:nowrap;字不換行*/
+	white-space:nowrap;
+	color:transparent;
+	-webkit-text-stroke: 1px #ffffff;
+	
+}
+
+/*about*/
+#about_container{
+	position: relative;
+
+	width:max(780px,70%);
+	height: 60vh;
+
+	order: 3;
+
+
+	display: flex;
+	flex: 0 0 auto ;
+	flex-direction: column;
+	
+}
+
+.div_about_title,.div_content_about{
+
+	position: relative;
+	width: 100%;
+	height: 20%;
+	
+	z-index: 200;
+
+	box-sizing: border-box;
+	border: 3px solid  rgb(194, 132, 25);
+}
+
+
+.div_about_title{
+	
+	
+	color: rgb(47, 47, 47);
+	background: rgb(194, 132, 25);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 60px;
+	letter-spacing: 2rem;
+
+}
+.title_about_word{
+		
+	position: absolute;
+}
+
+.div_content_about{
+
+	color: rgb(233, 233, 233);
+	background: rgb(47, 47, 47);
+	/*box-sizing使padding不影響整體框大小*/
+	letter-spacing: 0.2rem;
+	font-size: 20px;
+	padding-left: 5vw;
+
+	display: flex;
+	
+	align-items: center;
+	
+}
+
+.content_about_word{
+	
+	position: absolute;
+}
+
+
+/*WORK banner*/
+
+
+
+
+.div_work_banner{
+	position: relative;
+	width: 100%;
+	height: 350px;
+
+	display:flex;
+    justify-content: center;
+    align-items: center; 
+	flex: 0 0 auto ;
+
+	order: 4;
+
+
+}
+
+.work_banner_container{
+	position: absolute;
+
+	width: 100%;
+	
+	z-index: 300;
+	
+}
+
+
+.work_banner_pic{
+	width: 100%;
+}
+
+
+
+
+
+
+
+/*WORK*/
+#work_container{
+	position: relative;
+	width: 100%;
+	height: 200vh;
+	order: 5;
+	/*white-space:nowrap;字不換行*/
+	white-space:nowrap;
+
+
+}
+
+.section{
+	
+	position:relative;  
+	/*margin:auto;*/
+	width: 100%;
+	
+
+}
+
+.work_a{
+    text-decoration: none;
+    /*transition: color 1s ease;*/
+}
+.center_div
+{
+	position: relative;
+    height:100%;
+    width:100%;
+	z-index: 2;
+	
+	letter-spacing: 2rem;
+	color: rgb(161, 161, 161);
+	/*分開寫 但空同一張圖片 因為 一個div控制兩個filter好像不行*/
+	filter: brightness(0.3);
+
+
+    /*使用flex*/
+    display:flex;
+    justify-content: center; /*align horizontal*/
+    align-items: center; /*align vertical*/
+}
+
+.VR_work_pic{
+	
+    width:100%;
+
+    filter: saturate(0);
+	
+    z-index: 2;
+    transition: all 1s ease;
+}
+
+.VR_work_word{
+	
+    position: absolute;
+	
+
+    /*transform: translate(-50%, -50%);
+    /*transform: translate(-50%, -50%);其實沒看懂*/
+
+    font-weight: 700;
+    font-size: 70px;
+    z-index: 200;
+	transition: color 1s ease;
+}
+
+.center_div:hover{
+	
+    cursor:pointer;
+    color:rgb(255, 255, 255);
+	
+}
+
+.VR_work_pic:hover{
+    filter: saturate(1);
+}
+
+.center_div:hover{
+	filter: brightness(0.8);
+}
+
+
+
+
+#contact_container{
+	height: 50vh;
+	width: 100%;
+    position: relative;
+	order: 6;
+
+	display: flex;
+	flex: 0 0 auto ;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgb(0, 0, 0);
+}
+
+.border_box{
+	position: relative;
+	width: max(30vw,600px);
+	height: max(40%,200px);
+
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	box-sizing: border-box;
+	border: 3px solid  rgb(194, 132, 25);
+
+	box-shadow: 10px 10px 10px rgb(169, 70, 70);
+
+	transition: box-shadow 1s ease;
+	
+
+	
+
+
+}
+
+
+.border_box:hover{
+	
+	cursor: pointer;
+	box-shadow: 10px 10px 10px rgb(209, 209, 209);
+	transform: scale(1.05);
+	border: 3px solid  white;
+}
+.contact_wordAndIcon_container{
+	width: 80%;
+}
+.contact_word{
+	white-space:nowrap;
+	font-weight: 700;
+	font-size: 4em;
+	color: rgb(194, 132, 25);
+	font-stretch: ultra-expanded;
+	margin-top: 35px;
+	
+	
+}
+.contact_word_stroke{
+	white-space:nowrap;
+	font-weight: 700;
+	transform: scale(1,0.6);
+	font-size: 4em;
+	color:transparent;
+	-webkit-text-stroke: 1px rgb(194, 132, 25);
+
+}
+
+
+.div_contact_r{
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	
+	width: 100%;
+	
+	
+}
+
+
+
+.div_contact_r_icon{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+	/*配合JS opacity*/
+	opacity: 0;
+	
+	
+	
+
+}
+
+
+.contact_r_icon_pic{
+	padding-left: 20px;
+	padding-right: 10px;
+	scale: 1;
+
+	transition: all 1s ease
+
+}
+
+.contact_r_email_a:hover{
+	scale: 1.2;
+}
+
+
+.contact_r_indeed_a:hover{
+	scale: 1.2;
+}
+
+
+
+
+
+
+/* For PC */
+@media only screen and (min-width: 1280px) and (max-width: 10000px) {
+
+
+
+}
+
+/* For tablets */
+@media only screen and (min-width: 576px)and (max-width: 1280px){
+	.div_about_title{
+		font-size: 55px;
+	}
+
+	.div_content_about{
+
+
+		padding-left: 15%;
+
+	}
+
+	.About_text_stroke{
+
+		font-size: 4em;
+
+		
+	}
+
+
+
+	.VR_work_pic{
+		aspect-ratio: 7 /3;
+	}
+
+	.VR_work_word{
+
+		font-weight: 700;
+		/*max兩個值取最大*/
+		font-size: max(1em, 20px);
+		font-size: 3.5em;
+
+	}
+
+	.div_content_about{
+
+
+		letter-spacing: 0.1rem;
+		font-size: 1em;
+		/*EX ED 左邊間隔*/
+		padding-left: 5%;
+	
+
+		
+	}
+
+	.div_work_banner{
+
+		height: 180px;
+	
+	}
+
+
+	
+	
+
+}
+
+
+
+/* For Phone */
+@media only screen and (max-width: 576px) {
+	body{
+	
+		overflow-x: hidden;
+	}
+
+
+	nav{
+
+		font-size:10px;
+		padding-top: 2%;
+		
+	}
+
+	nav li a{
+
+		padding:10px 5px;
+		margin-left: 10px;	
+		margin-right: 10px;	
+
+		
+		
+		
+	}
+
+	.flex_container{
+		/*整個瀏覽器高*/
+		height: 140vh;
+		width: 100%;
+
+		
+	}
+
+	.div_top_main_pic{	
+
+		
+		width: 80vw;
+
+	}
+
+	.top_main_container{
+
+		height: 40vh;
+
+	
+	}
+	.About_text_stroke{
+
+		font-size: 1.5em;
+
+		
+	}
+
+	.div_content_about{
+
+
+		letter-spacing: 0rem;
+		font-size: 0.1em;
+		font-weight: 200;
+		/*EX ED 左邊間隔*/
+		padding-left: 5%;
+	
+
+		
+	}
+	.div_about_text_stroke{
+
+		height: 5vh;
+
+	}
+	#about_container{
+
+		width: 80%;
+		height: 25%;
+
+		
+	}
+	.div_about_title{
+		
+
+		font-size: 1em;
+		letter-spacing: 0.7rem;
+
+	}
+
+	.div_about_title,.div_content_about{
+		
+		position: relative;
+		width: 100%;
+		/*ED EX 字欄高*/
+		height: 25%;
+		
+		z-index: 200;
+
+	}
+
+	.div_work_banner{
+
+		height: 100px;
+	
+	}
+
+	.VR_work_pic{
+		aspect-ratio: 7 /3;
+	}
+	
+	
+	.VR_work_word{
+
+		font-weight: 700;
+		font-size: 1.2em;
+
+
+	}
+	.center_div
+	{
+
+		
+		letter-spacing: 1rem;
+
+	}
+
+	.top_main_word{
+		display: none;
+	}
+
+	
+
+
+	#contact_container{
+		height: 30vh;
+
+	}
+	
+	.border_box{
+		
+		width: min(60vw,250px);
+		height: 40%;
+
+	}
+	
+	
+
+	.contact_wordAndIcon_container{
+		width: 80%;
+	}
+	.contact_word{
+		
+		font-size: 1.5em;
+		margin-top: 5%;
+		
+		
+	}
+	.contact_word_stroke{
+
+		font-size: 1.5em;
+
+	
+	}
+
+	.contact_r_icon_pic{
+		padding-left: 10px;
+		padding-right: 15px;
+
+	
+	}
+	
+	
+	.contact_r_icon_pic{
+		width: 20px;
+	}
+	
+}

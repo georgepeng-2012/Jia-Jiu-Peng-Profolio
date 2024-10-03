@@ -1,0 +1,6 @@
+複製type資料夾
+新增空文件，命名jsconfig.json  不需要內容
+
+
+https://www.youtube.com/watch?v=BfmRVHKH_38
+即可
